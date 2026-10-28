@@ -1,0 +1,145 @@
+version: 2
+
+models:
+  - name: obt_employees
+    description: Cleaned employee records combining source attributes for downstream staging models.
+    columns:
+      - name: employee_id
+        description: Source employee identifier.
+        data_tests:
+          - not_null
+          - unique
+      - name: first_name
+        description: Employee first name, trimmed from the source.
+        data_tests:
+          - not_null
+      - name: last_name
+        description: Employee last name, trimmed from the source.
+        data_tests:
+          - not_null
+      - name: gender
+        description: Employee gender as provided by the source.
+        data_tests:
+          - not_null
+      - name: email
+        description: Lowercase, trimmed employee email address.
+        data_tests:
+          - not_null
+      - name: date_of_birth
+        description: Employee date of birth converted to a date.
+        data_tests:
+          - not_null
+      - name: salary
+        description: Salary converted to decimal after stripping currency symbols and separators.
+        data_tests:
+          - not_null
+          - non_negative
+      - name: department
+        description: Trimmed department name.
+        data_tests:
+          - not_null
+          - not_empty
+      - name: country
+        description: Trimmed country name.
+        data_tests:
+          - not_null
+          - not_empty
+    data_tests:
+      - unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - employee_id
+
+  - name: dim_country
+    description: One row per country represented by an employee.
+    columns:
+      - name: country_key
+        description: Country dimension surrogate key.
+        data_tests:
+          - not_null
+          - unique
+      - name: country_name
+        description: Normalized country name.
+        data_tests:
+          - not_null
+          - not_empty
+
+  - name: dim_date
+    description: Date dimension for employee dates of birth.
+    columns:
+      - name: date_key
+        description: Date key in YYYYMMDD format.
+        data_tests:
+          - not_null
+          - unique
+      - name: date
+        description: Calendar date.
+        data_tests:
+          - not_null
+          - unique
+      - name: year
+        description: Calendar year.
+        data_tests:
+          - not_null
+      - name: month
+        description: Calendar month number.
+        data_tests:
+          - not_null
+      - name: day
+        description: Day of month.
+        data_tests:
+          - not_null
+
+  - name: dim_department
+    description: One row per department represented by an employee.
+    columns:
+      - name: department_key
+        description: Department dimension surrogate key.
+        data_tests:
+          - not_null
+          - unique
+      - name: department_name
+        description: Normalized department name.
+        data_tests:
+          - not_null
+          - not_empty
+
+  - name: dim_employee
+    description: Employee dimension attributes at employee grain.
+    columns:
+      - name: employee_id
+        description: Source employee identifier and employee dimension grain.
+        data_tests:
+          - not_null
+          - unique
+      - name: first_name
+        description: Employee first name.
+        data_tests:
+          - not_null
+      - name: last_name
+        description: Employee last name.
+        data_tests:
+          - not_null
+      - name: email
+        description: Employee email address.
+        data_tests:
+          - not_null
+          - unique
+      - name: date_of_birth
+        description: Employee date of birth.
+        data_tests:
+          - not_null
+
+  - name: dim_gender
+    description: One row per normalized gender value represented by an employee.
+    columns:
+      - name: gender_key
+        description: Gender dimension surrogate key.
+        data_tests:
+          - not_null
+          - unique
+      - name: gender_name
+        description: Uppercase normalized gender value.
+        data_tests:
+          - not_null
+          - not_empty

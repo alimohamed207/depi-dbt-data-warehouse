@@ -1,0 +1,150 @@
+[0m21:05:24.360571 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027E242B6A50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027E27DB4E10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027E27DB5450>]}
+
+
+============================== 21:05:24.512387 | 0f7fba8e-1bae-4ffd-af83-2586b3760a43 ==============================
+[0m21:05:24.512387 [info ] [MainThread]: Running with dbt=1.12.6
+[0m21:05:24.513029 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'version_check': 'True', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\L S\\.dbt', 'use_colors': 'True', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'invocation_command': 'dbt init', 'log_path': 'logs'}
+[0m21:05:46.169791 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+
+[0m21:05:46.186302 [error] [MainThread]: Traceback (most recent call last):
+  File "D:\Data Engineer\depi_dbt\.venv\Lib\site-packages\dbt\cli\requires.py", line 198, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "D:\Data Engineer\depi_dbt\.venv\Lib\site-packages\dbt\cli\requires.py", line 144, in wrapper
+    return func(*args, **kwargs)
+  File "D:\Data Engineer\depi_dbt\.venv\Lib\site-packages\dbt\cli\main.py", line 504, in init
+    results = task.run()
+  File "D:\Data Engineer\depi_dbt\.venv\Lib\site-packages\dbt\task\init.py", line 340, in run
+    project_name = self.get_valid_project_name()
+  File "D:\Data Engineer\depi_dbt\.venv\Lib\site-packages\dbt\task\init.py", line 281, in get_valid_project_name
+    name = click.prompt("Enter a name for your project (letters, digits, underscore)")
+  File "D:\Data Engineer\depi_dbt\.venv\Lib\site-packages\click\termui.py", line 262, in prompt
+    value = prompt_func(prompt)
+  File "D:\Data Engineer\depi_dbt\.venv\Lib\site-packages\click\termui.py", line 245, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m21:05:46.190162 [debug] [MainThread]: Command `dbt init` failed at 21:05:46.189717 after 21.89 seconds
+[0m21:05:46.191798 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027E27D31940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027E27D9CCB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027E26936F10>]}
+[0m21:05:46.193251 [debug] [MainThread]: Flushing usage events
+[0m21:05:47.618279 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:06:07.109982 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BCEC155A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BCEEA11950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BCEEA11F90>]}
+
+
+============================== 21:06:07.116088 | 53e11801-c5f4-47c5-a67d-4a8e344cb9d5 ==============================
+[0m21:06:07.116088 [info ] [MainThread]: Running with dbt=1.12.6
+[0m21:06:07.116952 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'static_parser': 'True', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\L S\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'invocation_command': 'dbt init', 'log_path': 'logs'}
+[0m21:06:16.850667 [debug] [MainThread]: Starter project path: D:\Data Engineer\depi_dbt\.venv\Lib\site-packages\dbt\include\starter_project
+[0m21:06:16.876051 [info ] [MainThread]: Setting up your profile.
+[0m21:07:48.912735 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+
+[0m21:07:48.922590 [error] [MainThread]: Traceback (most recent call last):
+  File "D:\Data Engineer\depi_dbt\.venv\Lib\site-packages\dbt\cli\requires.py", line 198, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "D:\Data Engineer\depi_dbt\.venv\Lib\site-packages\dbt\cli\requires.py", line 144, in wrapper
+    return func(*args, **kwargs)
+  File "D:\Data Engineer\depi_dbt\.venv\Lib\site-packages\dbt\cli\main.py", line 504, in init
+    results = task.run()
+  File "D:\Data Engineer\depi_dbt\.venv\Lib\site-packages\dbt\task\init.py", line 363, in run
+    self.setup_profile(profile_name)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "D:\Data Engineer\depi_dbt\.venv\Lib\site-packages\dbt\task\init.py", line 265, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Data Engineer\depi_dbt\.venv\Lib\site-packages\dbt\task\init.py", line 182, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Data Engineer\depi_dbt\.venv\Lib\site-packages\dbt\task\init.py", line 166, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+  File "D:\Data Engineer\depi_dbt\.venv\Lib\site-packages\dbt\task\init.py", line 132, in generate_target_from_input
+    target[key] = click.prompt(
+                  ~~~~~~~~~~~~^
+        text, default=default, hide_input=hide_input, type=type
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Data Engineer\depi_dbt\.venv\Lib\site-packages\click\termui.py", line 262, in prompt
+    value = prompt_func(prompt)
+  File "D:\Data Engineer\depi_dbt\.venv\Lib\site-packages\click\termui.py", line 245, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m21:07:48.925934 [debug] [MainThread]: Command `dbt init` failed at 21:07:48.925624 after 101.91 seconds
+[0m21:07:48.926810 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BCEEC5E9E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BCEEC270B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BCEEC6E030>]}
+[0m21:07:48.927740 [debug] [MainThread]: Flushing usage events
+[0m21:07:39.902922 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026EDF98DA90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026EDD564CD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026EE22EF9D0>]}
+
+
+============================== 21:07:39.924064 | a4803a85-9569-4cae-9827-04d34d9668eb ==============================
+[0m21:07:39.924064 [info ] [MainThread]: Running with dbt=1.12.6
+[0m21:07:39.926667 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'static_parser': 'True', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\L S\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt seed', 'hints_enabled': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'logs'}
+[0m21:07:39.928792 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path D:\Data Engineer\depi_dbt\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m21:07:39.933033 [debug] [MainThread]: Command `dbt seed` failed at 21:07:39.932549 after 0.40 seconds
+[0m21:07:39.934570 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026EE23AC640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026EE227F9B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026EE2316BE0>]}
+[0m21:07:39.936051 [debug] [MainThread]: Flushing usage events
+[0m21:07:45.291277 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:07:51.349614 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002408AA55A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024088634CD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002408D3BF9D0>]}
+
+
+============================== 21:07:51.364704 | 399c2fa2-d264-4c18-ac48-d55b418ff108 ==============================
+[0m21:07:51.364704 [info ] [MainThread]: Running with dbt=1.12.6
+[0m21:07:51.367137 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'version_check': 'True', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\L S\\.dbt', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'invocation_command': 'dbt seed', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_path': 'logs'}
+[0m21:07:51.369096 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path D:\Data Engineer\depi_dbt\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m21:07:51.372791 [debug] [MainThread]: Command `dbt seed` failed at 21:07:51.372293 after 0.36 seconds
+[0m21:07:51.374261 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002408D47C640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002408D34F9B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002408D3E6BE0>]}
+[0m21:07:51.375921 [debug] [MainThread]: Flushing usage events
+[0m21:07:55.108857 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:11:40.290920 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC045EDA90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC02254B90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC06F4F9D0>]}
+
+
+============================== 21:11:40.306161 | 48e396a0-0a22-463f-b285-4380bc8b84a9 ==============================
+[0m21:11:40.306161 [info ] [MainThread]: Running with dbt=1.12.6
+[0m21:11:40.308619 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\L S\\.dbt', 'use_colors': 'True', 'hints_enabled': 'True', 'invocation_command': 'dbt run --select dim_employee dim_department dim_country dim_gender fact_employee', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'logs'}
+[0m21:11:40.310570 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path D:\Data Engineer\depi_dbt\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m21:11:40.314102 [debug] [MainThread]: Command `dbt run` failed at 21:11:40.313640 after 0.32 seconds
+[0m21:11:40.315499 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC0700C640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC06EDF9B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC06F76BE0>]}
+[0m21:11:40.316945 [debug] [MainThread]: Flushing usage events
+[0m21:11:42.744164 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:13:15.858603 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3A0F25A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E39EB04CD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3A388F9D0>]}
+
+
+============================== 21:13:15.872135 | 98de3193-7be6-4c71-9fbd-7ab2a7434d8e ==============================
+[0m21:13:15.872135 [info ] [MainThread]: Running with dbt=1.12.6
+[0m21:13:15.874269 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\L S\\.dbt', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'invocation_command': 'dbt run --select dim_employee dim_department dim_country dim_gender fact_employee', 'log_path': 'logs'}
+[0m21:13:15.876071 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path D:\Data Engineer\depi_dbt\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m21:13:15.879418 [debug] [MainThread]: Command `dbt run` failed at 21:13:15.878991 after 0.28 seconds
+[0m21:13:15.880693 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3A394C640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3A381F9B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3A38B6BE0>]}
+[0m21:13:15.881913 [debug] [MainThread]: Flushing usage events
+[0m21:13:18.783403 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:49:08.264120 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6CBF6DA90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6C9B58B90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6CE8CF9D0>]}
+
+
+============================== 20:49:08.280095 | 6065c97a-73f6-4d70-b68e-1d65a536e664 ==============================
+[0m20:49:08.280095 [info ] [MainThread]: Running with dbt=1.12.6
+[0m20:49:08.282116 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'maximum_seed_size_mib': '1', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\L S\\.dbt', 'invocation_command': 'dbt seed', 'hints_enabled': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'logs'}
+[0m20:49:08.283347 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path D:\Data Engineer\depi_dbt\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m20:49:08.285696 [debug] [MainThread]: Command `dbt seed` failed at 20:49:08.285457 after 0.43 seconds
+[0m20:49:08.286401 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6CE98C640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6CE85F9B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6CE8F6BE0>]}
+[0m20:49:08.287119 [debug] [MainThread]: Flushing usage events
+[0m20:49:10.448110 [debug] [MainThread]: An error was encountered while trying to flush usage events

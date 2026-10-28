@@ -1,0 +1,60 @@
+version: 2
+
+models:
+  - name: fact_employee
+    description: Employee-grain fact with foreign keys to country, department, gender, and date dimensions.
+    columns:
+      - name: employee_id
+        description: Natural employee identifier and fact grain.
+        data_tests:
+          - not_null
+          - unique
+      - name: department_key
+        description: Foreign key to the department dimension.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_department')
+                field: department_key
+      - name: country_key
+        description: Foreign key to the country dimension.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_country')
+                field: country_key
+      - name: gender_key
+        description: Foreign key to the gender dimension.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_gender')
+                field: gender_key
+      - name: date_key
+        description: Foreign key to the date dimension using date of birth.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+      - name: salary
+        description: Employee salary as a decimal measure.
+        data_tests:
+          - not_null
+          - non_negative
+      - name: employee_count
+        description: Additive count measure, one for each employee.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [1]
+    data_tests:
+      - unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - employee_id
